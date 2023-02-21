@@ -30,7 +30,6 @@ const CryptoData = () => {
         getData();
         getRandom();
     }, []);
-    console.log(crypto.data)
     return (
         <>
             <div className="app-container">
