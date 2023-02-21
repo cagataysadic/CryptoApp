@@ -15,9 +15,9 @@ const CryptoData = () => {
             const json = await request.json();
             setCrypto(json);
             const randomList = [];
-            const randomElement = crypto.data.map((element) => randomList.push(element));
+            const randomElement = json.data.map((element) => randomList.push(element));
             const randomSymbolList = randomElement[Math.floor(Math.random() * randomElement.length)]
-            const randomSymbol = crypto.data[randomSymbolList].symbol
+            const randomSymbol = json.data[randomSymbolList].symbol
             setRandom(randomSymbol)
         } catch(error) {
             console.log(error)
