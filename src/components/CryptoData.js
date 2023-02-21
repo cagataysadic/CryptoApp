@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./CryptoData.css"
 
 const CryptoData = () => {
@@ -6,30 +6,26 @@ const CryptoData = () => {
     const [search, setSearch] = useState("");
     const [random, setRandom] = useState("");
 
+    
+    
+    
     const getData = async () => {
         try {
             const request = await fetch("https://api.coincap.io/v2/assets");
             const json = await request.json();
             setCrypto(json);
+            const randomList = [];
+            const randomElement = crypto.data?.map((element) => randomList.push(element));
+            const randomSymbolList = randomElement[Math.floor(Math.random() * randomElement.length)]
+            const randomSymbol = crypto.data[randomSymbolList].symbol
+            setRandom(randomSymbol)
         } catch(error) {
             console.log(error)
         }
-    }
-    const getRandom = async () => {
-        try {
-            const randomList = []
-            const randomElement = await crypto.data.map((element) => randomList.push(element))
-            const randomSymbol = randomElement[Math.floor(Math.random() * randomElement.length)]
-            setRandom(crypto.data[randomSymbol].symbol)
-        } catch(error) {
-            console.log(error)
-        }
-        
-    }
+    }    
     useEffect(() => {
         getData();
-        getRandom();
-    }, []);
+    }, [crypto]);
     return (
         <>
             <div className="app-container">
