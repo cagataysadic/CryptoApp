@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import "./CryptoData.css"
 
 const CryptoData = () => {
@@ -40,18 +40,16 @@ const CryptoData = () => {
                 <div className="card-container">
                     {crypto && crypto.data.filter((crypto) => crypto.name.toLowerCase().includes(search.toLowerCase())).map((c) => (
                         <div className="crypto-card">
-                            <h2>{c.name}</h2>
-                            <h2>{c.priceUsd}$</h2>
-                            <h2>{c.rank}</h2>
-                            <h2>{c.symbol}</h2>
-                            <h2>{c.supply}</h2>
-                            <div className="crypto-card-link">
+                            <h2>Name: {c.name}</h2>
+                            <h2>Rank: {c.rank}</h2>
+                            <h2>Price: {(c.priceUsd).substring(0, 7)}$</h2>
+                            <h2>Symbol: {c.symbol}</h2>
+                            <h2>Supply: {(c.supply).substring(0, 15)}</h2>
+                            <p className="crypto-card-link">
                                 <a href={`https://www.binance.com/en/trade/${c.symbol}_BUSD`}>
-                                    <div className="crypto-card-link-button">
-                                        <button>Buy Some?</button>
-                                    </div>
+                                    <button>Buy Some?</button>
                                 </a>
-                            </div>
+                            </p>
                         </div>
                     ))}
                 </div>

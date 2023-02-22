@@ -1,42 +1,45 @@
 .App {
-    background-color: antiquewhite;
+    background-color: rgb(100, 34, 34);
 }
 .app-container{
     width: 100%;
     height: 100vh;
 }
-*{
-    background-color: antiquewhite;
-}
 .search-container {
     padding-left: 50px;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-top: 30px;
     display: flex;
     justify-content: center;
 }
 .search-container input {
-    color: darkred;
+    color: rgb(201, 199, 77);
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    background-color: bisque;
+    background-color: rgb(110, 49, 44);
+    font: 1em sans-serif;
 }
 .card-container {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     flex-wrap: wrap;
-    background-color: antiquewhite;
+    background-color: rgb(100, 34, 34);
 }
 .crypto-card{
-    margin: 5px;
-    background-color: bisque;
-    width: 30%;
-    height: 15%;
+    margin: 15px;
+    background-color: rgb(99, 58, 109);
+    width: 25%;
+    height: 25%;
+    border-radius: 10px;
+    box-shadow: 15px 14px 28px rgb(15, 10, 10), 0 10px 10px rgb(15, 10, 12);
 }
 .crypto-card h2 {
-    background-color: bisque;
-    color: crimson;
+    background-color: rgb(99, 58, 109);
+    color: rgb(31, 194, 80);
+    display: inline-block;
+    margin: 15px;
+    font: 1em sans-serif;
 }
 .random-container {
     width: 100%;
@@ -44,11 +47,34 @@
     justify-content: center;
 }
 .random-container button {
-    background-color: bisque;
-    color: darkred;
+    margin: 15px;
+    background-color: rgb(99, 58, 109);
+    color: rgb(39, 252, 103);
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 15px 14px 28px rgb(15, 10, 10), 0 10px 10px rgb(15, 10, 12);
+    font: 1em sans-serif;
+}
+.random-container button:hover {
+    background-color: rgb(167, 0, 209);
+    padding: 5px;
+}
+.crypto-card-link {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(99, 58, 109);
 }
 .crypto-card-link button{
-    margin-top: 5px;
-    background-color: bisque;
-    color: darkred;
+    background-color: rgb(99, 58, 109);
+    color: rgb(39, 252, 103);
+    cursor: pointer;
+    display: none;
+    border-radius: 7px;
+    box-shadow: 15px 14px 28px rgb(15, 10, 10), 0 10px 10px rgb(15, 10, 12);
+    font: 1em sans-serif;
+}
+.crypto-card:hover .crypto-card-link button{
+    display: inline-block;
+    background-color: rgb(167, 0, 209);
+    padding: 10px;
 }
